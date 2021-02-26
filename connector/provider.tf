@@ -13,5 +13,5 @@ provider "google" {
     credentials = "${file("${var.path}/secrets.json")}"
 }
 provider "netapp-cloudmanager" {
-  #refresh_token         = uX1hR2YbxU3fWl2QiZ41QqkZAQBmGv2x6Rzj_F1247qTL
+
 }
