@@ -1,4 +1,7 @@
-variable "path" {default = "/home/karel/terraform/credentials"}
+variable "path" {default = "../credentials"}
+variable "region" = "europe-west2"
+variable "project" = "modern-dream-289506"
+
 terraform {
   required_providers {
     netapp-cloudmanager = {
@@ -8,8 +11,8 @@ terraform {
   }
 }
 provider "google" {
-    project = "modern-dream-289506"
-    region = "europe-west2-a"
+    project = "$var.project"
+    region = "$var.region"
     credentials = "${file("${var.path}/secrets.json")}"
 }
 provider "netapp-cloudmanager" {
